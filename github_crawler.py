@@ -52,6 +52,15 @@ CHANNEL_CONFIG = {
     "yunpanxunlei":  {"priority": "LOW",  "pages": 2, "note": "迅雷（非目标）"},
     "yunpanuc":      {"priority": "LOW",  "pages": 2, "note": "UC（非目标）"},
     "XiangxiuNBB":   {"priority": "LOW",  "pages": 2, "note": "香秀"},
+
+    # --- STUDY 学习/考证/电子书（2026-11 新增，来源已通过公开页面验证）---
+    # 注意：这批频道产出以网课/教材/PDF 为主，与影视频道分开统计，便于观察各自的产出
+    "doubaopojie":   {"priority": "HIGH", "pages": 5, "note": "豆包资源分享：考证类网课"},
+    "gotopan":       {"priority": "HIGH", "pages": 5, "note": "网盘资源分享频道：电子书/教程/考试资料，标签规范"},
+    "xuendj1":       {"priority": "MID",  "pages": 3, "note": "学习资料分享：PDF 教材/专业书籍"},
+    "sharebooks4you":{"priority": "MID",  "pages": 3, "note": "电子书/听书/期刊/课程资源"},
+    "doubaoziyuan":  {"priority": "LOW",  "pages": 2, "note": "豆包备用频道"},
+    "aboutstudychannel": {"priority": "LOW", "pages": 2, "note": "叮当星球：课程/电子书/课件"},
 }
 
 CHANNELS = list(CHANNEL_CONFIG.keys())
@@ -108,6 +117,11 @@ def classify_type(title):
         "movie": ["电影", "剧集", "电视剧", "动漫", "动画", "纪录片", "综艺",
                    "4k", "1080p", "2160p", "蓝光", "bd", "hdr", "remux",
                    "漫威", "dc", "迪士尼", "宫崎骏", "新海诚"],
+        # 考证类优先于电子书：标题里同时出现「教材」和「二建」时应归入考证
+        "exam": ["二建", "一建", "建造师", "监理", "造价", "消防", "注安",
+                 "安全工程师", "咨询工程师", "考试", "备考", "真题", "押题",
+                 "讲义", "考证", "考研", "公考", "国考", "省考", "事业单位",
+                 "教师资格", "catti", "会计师", "经济师", "上岸"],
         "music": ["音乐", "专辑", "歌曲", "mp3", "flac", "wav", "无损",
                   "黑胶", "原声", "ost", "演唱", "歌手", "乐队",
                   "piano", "钢琴", "violin", "小提琴", "guitar", "吉他",
@@ -118,8 +132,9 @@ def classify_type(title):
                   "历史", "哲学", "科学"],
         "software": ["软件", "工具", "app", "应用", "破解", "激活",
                      "adobe", "office", "ps", "photoshop", "cad"],
-        "learning": ["教程", "课程", "学习", "教学", "培训", "入门",
-                     "进阶", "实战", "网课", "公开课",
+        "learning": ["教程", "课程", "课时", "学习", "教学", "培训", "入门",
+                     "进阶", "实战", "网课", "公开课", "小学", "初中", "高中",
+                     "英语", "数学",
                      "编程", "python", "java", "javascript", "c++",
                      "前端", "后端", "ai", "人工智能", "机器学习"],
     }
