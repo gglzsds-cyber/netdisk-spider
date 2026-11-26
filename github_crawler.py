@@ -55,13 +55,16 @@ CHANNEL_CONFIG = {
 
     # --- STUDY 学习/考证/电子书（2026-11 新增，来源已通过公开页面验证）---
     # 注意：这批频道产出以网课/教材/PDF 为主，与影视频道分开统计，便于观察各自的产出
-    "doubaopojie":   {"priority": "HIGH", "pages": 5, "note": "豆包资源分享：考证类网课"},
-    "gotopan":       {"priority": "HIGH", "pages": 5, "note": "网盘资源分享频道：电子书/教程/考试资料，标签规范"},
-    "xuendj1":       {"priority": "MID",  "pages": 3, "note": "学习资料分享：PDF 教材/专业书籍"},
-    "sharebooks4you":{"priority": "MID",  "pages": 3, "note": "电子书/听书/期刊/课程资源"},
+    "doubaopojie":   {"priority": "HIGH", "pages": 5, "note": "豆包资源分享：网课为主"},
     "doubaoziyuan":  {"priority": "LOW",  "pages": 2, "note": "豆包备用频道"},
-    "aboutstudychannel": {"priority": "LOW", "pages": 2, "note": "叮当星球：课程/电子书/课件"},
+    # 2026-11-26 第二轮探测：35 个候选里筛出的有产出频道（见下方说明）
+    "jxwpzy":        {"priority": "HIGH", "pages": 5, "note": "精选网盘资源：电子书/课程，2.4万订阅，几乎每条带链接"},
+    "shumozy":       {"priority": "HIGH", "pages": 5, "note": "书墨资源：夸克链接多，含电子书/软件/影视混合"},
+    "quanziyuanshe": {"priority": "MID",  "pages": 3, "note": "全网云盘资源社：存量巨大（单页287链接），但已停更于2024"},
+    "bdwpzhpd":      {"priority": "MID",  "pages": 3, "note": "百度网盘综合频道：百度链接高产，影视为主"},
 }
+# 已探测但无百度/夸克链接、已从配置中移除的频道：
+# gotopan / xuendj1 / sharebooks4you / aboutstudychannel（链接在图片或站外，爬虫抓不到）
 
 CHANNELS = list(CHANNEL_CONFIG.keys())
 
